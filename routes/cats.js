@@ -1,29 +1,10 @@
 const express = require('express');
 const { check, validationResult } = require('express-validator');
 const router = express.Router();
-const { v4: uuidv4 } = require('uuid');
 // "Model"
 const Cat = require('../models/Cat');
-
-// Demo Data
-const cats = [
-	{ id: '1', name: 'Abyssinian', breed: 'Egypt', weight: 5 },
-	{ id: uuidv4(), name: 'Basdasd', breed: 'Egypt', weight: 5 },
-	{ id: uuidv4(), name: 'Casdasdas', breed: 'Egypt', weight: 5 },
-	{ id: uuidv4(), name: 'Dasdasdasd', breed: 'Egypt', weight: 5 },
-	{ id: uuidv4(), name: 'Abyssinian', breed: 'Egypt', weight: 5 },
-	{ id: uuidv4(), name: 'Basdasd', breed: 'Egypt', weight: 5 },
-	{ id: uuidv4(), name: 'Casdasdas', breed: 'Egypt', weight: 5 },
-	{ id: uuidv4(), name: 'Dasdasdasd', breed: 'Egypt', weight: 5 },
-	{ id: uuidv4(), name: 'Abyssinian', breed: 'Egypt', weight: 5 },
-	{ id: uuidv4(), name: 'Basdasd', breed: 'Egypt', weight: 5 },
-	{ id: uuidv4(), name: 'Casdasdas', breed: 'Egypt', weight: 5 },
-	{ id: uuidv4(), name: 'Dasdasdasd', breed: 'Egypt', weight: 5 },
-	{ id: uuidv4(), name: 'Abyssinian', breed: 'Egypt', weight: 5 },
-	{ id: uuidv4(), name: 'Basdasd', breed: 'Egypt', weight: 5 },
-	{ id: uuidv4(), name: 'Casdasdas', breed: 'Egypt', weight: 5 },
-	{ id: uuidv4(), name: 'Dasdasdasd', breed: 'Egypt', weight: 5 },
-];
+// "Data"
+const cats = require('../db/db');
 
 /*
  * @route GET api/cats/
