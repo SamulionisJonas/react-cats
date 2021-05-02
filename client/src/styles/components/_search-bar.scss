@@ -1,0 +1,20 @@
+.searchbar {
+	display: flex;
+	border-bottom: 2px solid black;
+	justify-content: start;
+	width: 100%;
+	max-width: 380px;
+
+	&_input {
+		padding: 0.6em 0;
+		height: 100%;
+		width: 100%;
+	}
+
+	input {
+		outline: none;
+		width: 100%;
+		background: transparent;
+		border-color: transparent;
+	}
+}
