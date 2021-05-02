@@ -4,16 +4,23 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCatBreeds, search } from '../slices/catSlice';
 // Components
 import { SearchBar } from '../components/SearchBar/SearchBar';
-import { List } from "../components/List/List";
-import { ListItem } from "../components/List/ListItem";
+import { List } from '../components/List/List';
+import { ListItem } from '../components/List/ListItem';
+import { Pagination } from '../components/Pagination/Pagination';
 
 export const App = () => {
 	const dispatch = useDispatch();
 	const { loading, filtered } = useSelector((state) => state.catBreeds);
+	const [items, setItems] = React.useState();
 
 	useEffect(() => {
 		dispatch(fetchCatBreeds());
 	}, [dispatch]);
+
+	// Callback for item set
+	const onPageChange = (itemsOfPage) => {
+		setItems(itemsOfPage);
+	};
 
 	return (
 		<div className='wrapper'>
@@ -30,7 +37,13 @@ export const App = () => {
 				</div>
 			) : filtered.length > 0 ? (
 				<List>
-					{filtered && filtered.map((item, i) => <ListItem key={i} item={item} />)}
+					{items && items.map((item, i) => <ListItem key={i} item={item} />)}
+					<Pagination
+						items={filtered}
+						onChangePage={onPageChange}
+						initialPage={1}
+						pageSize={5}
+					/>
 				</List>
 			) : (
 				<div className='gif'>

@@ -19,7 +19,7 @@ export const SearchBar = ({ onChange }) => {
 				sortBy: state,
 			})
 		);
-	}, [debouncedValue]);
+	}, [debouncedValue, state]);
 
 	return (
 		<>
