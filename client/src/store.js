@@ -7,8 +7,10 @@ import {
 import { persistReducer } from "redux-persist";
 import logger from "redux-logger";
 import storage from "redux-persist/lib/storage";
+// Redux Slices imports
+import catSlice from "./slices/catSlice";
 
-const reducers = combineReducers();
+const reducers = combineReducers({ catBreeds: catSlice });
 
 const persistConfig = {
   key: "root",
