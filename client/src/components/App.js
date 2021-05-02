@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCatBreeds, search } from '../slices/catSlice';
 // Components
 import { SearchBar } from '../components/SearchBar/SearchBar';
+import { Filter } from '../components/Filter/Filter';
 import { List } from '../components/List/List';
 import { ListItem } from '../components/List/ListItem';
 import { Pagination } from '../components/Pagination/Pagination';
@@ -37,6 +38,8 @@ export const App = () => {
 				</div>
 			) : filtered.length > 0 ? (
 				<List>
+					<Filter />
+
 					{items && items.map((item, i) => <ListItem key={i} item={item} />)}
 					<Pagination
 						items={filtered}
