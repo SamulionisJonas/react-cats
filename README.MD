@@ -1,4 +1,4 @@
-# CATS BACKEND DEMO
+# CATS BE DEMO
 
 Demo app for the interview.
 
