@@ -1,9 +1,3 @@
-import React from 'react'
+import React from 'react';
 
-export const List = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+export const List = ({ children }) => <div className='list'>{children}</div>;
