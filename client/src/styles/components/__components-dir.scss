@@ -1,0 +1,11 @@
+/*
+*   This file is used to contain all components imports.
+*   Files inside this folder can contain specific element styles and layout. 
+*/
+
+// Import Components files
+@import "search-bar";
+@import "_search-bar-filter";
+@import "list";
+@import "pagination";
+@import "filter";
